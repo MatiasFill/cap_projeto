@@ -1,0 +1,53 @@
+using cap.schema from '../db/schema';
+
+
+service categories {
+    @UI: {
+        SelectionFields  : [name],
+        LineItem         : [
+            {
+                Value: icon,
+                Label: 'Icone'
+            },
+            {
+                Value: name,
+                Label: 'Nome'
+            },
+        ],
+        Facets           : [{
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Detalhes da Cartegoria',
+            Target: '@UI.FieldGroup#Main'
+        }],
+        FieldGroups #Main: {Data: [
+            {
+                Value: name,
+                Label: 'Nome'
+            },
+            {
+                Value: icon,
+                Label: 'Icone'
+            },
+        ]}
+
+    }
+    entity Categories @(Capabilities: {
+        InsertRestrictions: {
+            $Type: 'Capabilities.InsertRestrictionsType',
+            Insertable
+        },
+
+        UpdateRestrictions: {
+            $Type: 'Capabilities.UpdateRestrictionsType',
+            Updatable
+        },
+        DeleteRestrictions: {
+            $Type: 'Capabilities.DeleteRestrictionsType',
+            Deletable
+        },
+
+    }) as projection on schema.Categories;
+
+    annotate categories with @odata.draft.enabled;
+
+}
