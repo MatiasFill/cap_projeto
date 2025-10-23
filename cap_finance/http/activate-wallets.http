@@ -1,4 +1,4 @@
-POST http://localhost:4004/odata/v4/wallets/Wallets(ID='44f4283d-d1f1-4e2e-ad2b-1ed9c2adc153',IsActiveEntity=false)/draftActivate
+POST http://localhost:4004/odata/v4/wallets/Wallets(ID='af7c0682-268b-4dba-a171-3d57e62d9ebd',IsActiveEntity=false)/draftActivate
 Content-Type: application/json
 
 
