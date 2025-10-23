@@ -1,2 +1,2 @@
-DELETE http://localhost:4004/odata/v4/wallets/Wallets(ID='44f4283d-d1f1-4e2e-ad2b-1ed9c2adc153',IsActiveEntity=true)
+DELETE http://localhost:4004/odata/v4/wallets/Wallets(ID='e4067924-4587-444c-b2a0-71f1a0ec16b4',IsActiveEntity=true)
 Content-Type: application/json
