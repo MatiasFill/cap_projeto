@@ -2,8 +2,8 @@ using cap.schema from '../db/schema';
 
 
 service movements {
-    
-     entity MovementTypes as projection on schema.MovementTypes;
+
+    entity MovementTypes as projection on schema.MovementTypes;
     entity Wallets       as projection on schema.wallets;
     entity Capabilities  as projection on schema.Categories;
 
@@ -58,27 +58,28 @@ service movements {
             Deletable
         },
 
-    }) as
+    })                   as
         projection on schema.Movements {
             ID,
             title,
             amount,
-            @Common.ValueList: {
+            @Common.ValueList      : {
                 Label         : 'Tipo de Movimento',
                 CollectionPath: 'movementTypes',
-                Parameters    : [{
-                    $Type            : 'Common.ValueListParameterInOut',
-                    LocalDataProperty: 'type_ID',
-                    ValueListProperty: 'ID'
-                },
-                {
-                    $Type            : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty: 'description'
-                }
+                Parameters    : [
+                    {
+                        $Type            : 'Common.ValueListParameterInOut',
+                        LocalDataProperty: 'type_ID',
+                        ValueListProperty: 'ID'
+                    },
+                    {
+                        $Type            : 'Common.ValueListParameterDisplayOnly',
+                        ValueListProperty: 'description'
+                    }
                 ]
             }
-            @Common.TextArrangement: #TextOnly 
-            @Common.Text : type_name
+            @Common.TextArrangement: #TextOnly
+            @Common.Text           : type_name
             type,
             type.description                      as type_name,
             wallet,
@@ -104,7 +105,7 @@ service movements {
             category,
             category.icon || ' ' || category.name as category_name : String(50),
 
-              case
+            case
                 when type.description = 'RECEITA'
                      then 3
                 when type.description = 'DESPESA'
@@ -114,6 +115,6 @@ service movements {
 
         };
 
-    annotate movements with @odata.draft.enabled;
+    annotate Movements with @odata.draft.enabled;
 
 }

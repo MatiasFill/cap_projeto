@@ -1,6 +1,5 @@
 using cap.schema from '../db/schema';
 
-
 service wallets {
     @UI: {
         SelectionFields  : [name],
@@ -17,14 +16,13 @@ service wallets {
             Value: name,
             Label: 'Nome'
         }]}
-
     }
+
     entity Wallets @(Capabilities: {
         InsertRestrictions: {
             $Type: 'Capabilities.InsertRestrictionsType',
             Insertable
         },
-
         UpdateRestrictions: {
             $Type: 'Capabilities.UpdateRestrictionsType',
             Updatable
@@ -32,55 +30,13 @@ service wallets {
         DeleteRestrictions: {
             $Type: 'Capabilities.DeleteRestrictionsType',
             Deletable
-        },
-
+        }
     }) as
-        projection on schema.Movements {
+        projection on schema.wallets {
             ID,
-            title,
-            amount,
-            @Common.ValueList      : {
-                Label         : 'Tipo de Movimento',
-                CollectionPath: 'MovementTypes',
-                Parameters    : [
-                    {
-                        $Type            : 'Common.ValueListParameterInOut',
-                        LocalDataProperty: 'type_ID',
-                        ValueListProperty: 'ID'
-                    },
-                    {
-                        $Type            : 'Common.ValueListParameterDisplayOnly',
-                        ValueListProperty: 'description'
-                    }
-                ]
-            }
-            @Common.TextArrangement: #TextOnly
-            @Common.Text           : type_name
-            type,
-            type.description                      as type_name,
-            @Common.ValueList: {
-                Label         : 'Carteira',
-                CollectionPath: 'wallets',
-                Parameters    : [
-                    {
-                        $Type            : 'Common.ValueListParameterInOut',
-                        LocalDataProperty: 'wallet_ID',
-                        ValueListProperty: 'ID'
-                    },
-                    {
-                        $Type            : 'Common.ValueListParameterDisplayOnly',
-                        ValueListProperty: 'name'
-                    }
-                ]
-            }
-            @Common.TextArrangement: #TextOnly 
-            @Common.Text           : wallet_name
-            wallet,
-            wallet.name                           as wallet_name,
-            category,
-            category.icon || ' ' || category.name as category_name : String(50),
+            name,
+            createdAt
         };
 
-    annotate wallets with @odata.draft.enabled;
-
+    annotate Wallets with @odata.draft.enabled;
 }

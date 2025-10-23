@@ -1,0 +1,7 @@
+PUT http://localhost:4004/odata/v4/wallets/Wallets(ID='e4067924-4587-444c-b2a0-71f1a0ec16b4',IsActiveEntity=false)
+Content-Type: application/json
+
+{
+    "name": "caixa_App"
+    
+}
