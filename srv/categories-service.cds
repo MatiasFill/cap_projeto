@@ -48,6 +48,6 @@ service categories {
 
     }) as projection on schema.Categories;
 
-    annotate categories with @odata.draft.enabled;
+    annotate Categories with @odata.draft.enabled;
 
 }
