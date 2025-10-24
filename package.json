@@ -16,8 +16,8 @@
     "start": "cds-serve",
     "watch-app-catecories": "cds watch --open com.capfinance.category.appcatecories/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-app-wallets": "cds watch --open com.capfinance.wallets.appwallets/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-app-movements-types": "cds watch --open com.capfinance.movements.types.appmovementstypes/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-app-movements": "cds watch --open com.capfinance.movements.appmovements/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-app-movements": "cds watch --open com.capfinance.movements.appmovements/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-movements-types": "cds watch --open com.capfinance.movement.type.appmovementstypes/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
@@ -26,7 +26,7 @@
   "sapux": [
     "app/app-catecories",
     "app/app-wallets",
-    "app/app-movements-types",
-    "app/app-movements"
+    "app/app-movements",
+    "app/app-movements-types"
   ]
 }

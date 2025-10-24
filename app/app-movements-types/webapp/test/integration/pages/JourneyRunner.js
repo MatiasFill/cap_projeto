@@ -1,15 +1,15 @@
 sap.ui.define([
     "sap/fe/test/JourneyRunner",
-	"com/capfinance/movements/types/appmovementstypes/test/integration/pages/MovementTypesList",
-	"com/capfinance/movements/types/appmovementstypes/test/integration/pages/MovementTypesObjectPage"
-], function (JourneyRunner, MovementTypesList, MovementTypesObjectPage) {
+	"com/capfinance/movement/type/appmovementstypes/test/integration/pages/MovementTypeList",
+	"com/capfinance/movement/type/appmovementstypes/test/integration/pages/MovementTypeObjectPage"
+], function (JourneyRunner, MovementTypeList, MovementTypeObjectPage) {
     'use strict';
 
     var runner = new JourneyRunner({
-        launchUrl: sap.ui.require.toUrl('com/capfinance/movements/types/appmovementstypes') + '/test/flp.html#app-preview',
+        launchUrl: sap.ui.require.toUrl('com/capfinance/movement/type/appmovementstypes') + '/test/flp.html#app-preview',
         pages: {
-			onTheMovementTypesList: MovementTypesList,
-			onTheMovementTypesObjectPage: MovementTypesObjectPage
+			onTheMovementTypeList: MovementTypeList,
+			onTheMovementTypeObjectPage: MovementTypeObjectPage
         },
         async: true
     });

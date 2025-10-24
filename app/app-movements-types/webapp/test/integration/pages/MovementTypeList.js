@@ -8,9 +8,9 @@ sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
 
     return new ListReport(
         {
-            appId: 'com.capfinance.movements.types.appmovementstypes',
-            componentId: 'MovementTypesList',
-            contextPath: '/MovementTypes'
+            appId: 'com.capfinance.movement.type.appmovementstypes',
+            componentId: 'MovementTypeList',
+            contextPath: '/MovementType'
         },
         CustomPageDefinitions
     );
