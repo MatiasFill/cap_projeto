@@ -3,12 +3,12 @@ using cap.schema from '../db/schema';
 
 service movements {
 
-    entity MovementTypes as projection on schema.MovementTypes;
-    entity Wallets       as projection on schema.wallets;
+    entity MovementType as projection on schema.MovementType;
+    entity Wallets       as projection on schema.Wallets;
     entity Capabilities  as projection on schema.Categories;
 
     @UI: {
-        SelectionFields  : [name],
+        SelectionFields  : [title],
         LineItem         : [
             {Value: title},
             {
@@ -34,7 +34,7 @@ service movements {
             Label : 'Detalhes',
             Target: '@UI.FieldGroup#Main'
         }],
-        FieldGroups #Main: {Data: [
+        FieldGroup #Main: {Data: [
             {Value: title},
             {Value: amount},
             {Value: type_ID},
@@ -65,7 +65,7 @@ service movements {
             amount,
             @Common.ValueList      : {
                 Label         : 'Tipo de Movimento',
-                CollectionPath: 'movementTypes',
+                CollectionPath: 'movementType',
                 Parameters    : [
                     {
                         $Type            : 'Common.ValueListParameterInOut',
@@ -73,7 +73,7 @@ service movements {
                         ValueListProperty: 'ID'
                     },
                     {
-                        $Type            : 'Common.ValueListParameterDisplayOnly',
+                       $Type            : 'Common.ValueListParameterDisplayOnly',
                         ValueListProperty: 'description'
                     }
                 ]
@@ -97,6 +97,10 @@ service movements {
                     {
                         $Type            : 'Common.ValueListParameterDisplayOnly',
                         ValueListProperty: 'name'
+                    },
+                    {
+                        $Type            : 'Common.ValueListParameterDisplayOnly',
+                        ValueListProperty: 'icon'
                     }
                 ]
             }

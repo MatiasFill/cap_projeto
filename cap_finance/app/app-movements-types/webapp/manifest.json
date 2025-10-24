@@ -1,7 +1,7 @@
 {
   "_version": "1.76.0",
   "sap.app": {
-    "id": "com.capfinance.movements.types.appmovementstypes",
+    "id": "com.capfinance.movement.type.appmovementstypes",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.19.1",
-      "toolsId": "7a0d7890-0d85-4535-a15d-abaf8ead2c3a"
+      "toolsId": "9fc91dff-4cb5-40e3-9e46-f41ada203b3d"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/movement-types/",
+        "uri": "/odata/v4/movement-type/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.capfinance.movements.types.appmovementstypes.i18n.i18n"
+          "bundleName": "com.capfinance.movement.type.appmovementstypes.i18n.i18n"
         }
       },
       "": {
@@ -85,28 +85,28 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "MovementTypesList",
-          "target": "MovementTypesList"
+          "name": "MovementTypeList",
+          "target": "MovementTypeList"
         },
         {
-          "pattern": "MovementTypes({key}):?query:",
-          "name": "MovementTypesObjectPage",
-          "target": "MovementTypesObjectPage"
+          "pattern": "MovementType({key}):?query:",
+          "name": "MovementTypeObjectPage",
+          "target": "MovementTypeObjectPage"
         }
       ],
       "targets": {
-        "MovementTypesList": {
+        "MovementTypeList": {
           "type": "Component",
-          "id": "MovementTypesList",
+          "id": "MovementTypeList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/MovementTypes",
+              "contextPath": "/MovementType",
               "variantManagement": "Page",
               "navigation": {
-                "MovementTypes": {
+                "MovementType": {
                   "detail": {
-                    "route": "MovementTypesObjectPage"
+                    "route": "MovementTypeObjectPage"
                   }
                 }
               },
@@ -120,14 +120,14 @@
             }
           }
         },
-        "MovementTypesObjectPage": {
+        "MovementTypeObjectPage": {
           "type": "Component",
-          "id": "MovementTypesObjectPage",
+          "id": "MovementTypeObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/MovementTypes"
+              "contextPath": "/MovementType"
             }
           }
         }

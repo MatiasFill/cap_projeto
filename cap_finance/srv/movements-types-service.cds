@@ -1,7 +1,7 @@
 using cap.schema from '../db/schema';
 
 
-service movementTypes {
+service movementType {
     @UI: {
         SelectionFields  : [description],
         LineItem         : [{
@@ -13,13 +13,13 @@ service movementTypes {
             Label : 'Detalhes da Cartegoria',
             Target: '@UI.FieldGroup#Main'
         }],
-        FieldGroups #Main: {Data: [{
+        FieldGroup #Main: {Data: [{
             Value: description,
             Label: 'Descrição'
         }, ]}
 
     }
-    entity MovementTypes @(Capabilities: {
+    entity MovementType @(Capabilities: {
         InsertRestrictions: {
             $Type: 'Capabilities.InsertRestrictionsType',
             Insertable
@@ -34,8 +34,8 @@ service movementTypes {
             Deletable
         },
 
-    }) as projection on schema.MovementTypes;
+    }) as projection on schema.MovementType;
 
-    annotate MovementTypes with @odata.draft.enabled;
+    annotate MovementType with @odata.draft.enabled;
 
 }

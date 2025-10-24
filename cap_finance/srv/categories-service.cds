@@ -19,7 +19,7 @@ service categories {
             Label : 'Detalhes da Cartegoria',
             Target: '@UI.FieldGroup#Main'
         }],
-        FieldGroups #Main: {Data: [
+        FieldGroup #Main: {Data: [
             {
                 Value: name,
                 Label: 'Nome'

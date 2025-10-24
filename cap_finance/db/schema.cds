@@ -8,7 +8,7 @@ using {
 } from '@sap/cds/common';
 
 // todas tabelas começa com o entity
-entity wallets : cuid, managed {
+entity Wallets : cuid, managed {
     @title: 'Nome'
     name      : String(50);
     createdAt : DateTime;
@@ -38,10 +38,10 @@ entity Movements : cuid, managed {
     date      : Date;
 
     @title: 'Tipo'
-    type      : Association to MovementTypes;
+    type      : Association to MovementType;
 
     @title: 'Carteira'
-    wallet    : Association to wallets;
+    wallet    : Association to Wallets;
 
     @title: 'Categoria'
     category  : Association to Categories;
@@ -52,7 +52,7 @@ entity Movements : cuid, managed {
 
 }
 
-entity MovementTypes : cuid, managed {
+entity MovementType : cuid, managed {
     description : String(50);
     name        : String(50);
 

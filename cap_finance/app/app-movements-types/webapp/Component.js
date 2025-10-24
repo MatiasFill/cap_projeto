@@ -3,7 +3,7 @@ sap.ui.define(
     function (Component) {
         "use strict";
 
-        return Component.extend("com.capfinance.movements.types.appmovementstypes.Component", {
+        return Component.extend("com.capfinance.movement.type.appmovementstypes.Component", {
             metadata: {
                 manifest: "json"
             }

@@ -1,22 +1,22 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Oct 23 2025 14:49:52 GMT-0300 (Brasilia Standard Time)|
+|**Generation Date and Time**<br>Fri Oct 24 2025 16:35:15 GMT-0300 (Brasilia Standard Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.19.1|
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local CAP|
-|**Service URL**<br>http://localhost:4004/odata/v4/movement-types/|
+|**Service URL**<br>http://localhost:4004/odata/v4/movement-type/|
 |**Module Name**<br>app-movements-types|
 |**Application Title**<br>Tipos de Movimentos|
-|**Namespace**<br>com.capfinance.movements.types|
+|**Namespace**<br>com.capfinance.movement.type|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.141.3|
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
-|**Main Entity**<br>MovementTypes|
+|**Main Entity**<br>MovementType|
 
 ## app-movements-types
 
@@ -26,7 +26,7 @@ Tipos de Movimentos
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  To launch the generated app, start your CAP project:  and navigate to the following location in your browser:
 
-http://localhost:4004/com.capfinance.movements.types.appmovementstypes/index.html
+http://localhost:4004/com.capfinance.movement.type.appmovementstypes/index.html
 
 #### Pre-requisites:
 

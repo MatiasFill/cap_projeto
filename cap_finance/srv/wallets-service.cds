@@ -12,7 +12,7 @@ service wallets {
             Label : 'Detalhes da Carteira',
             Target: '@UI.FieldGroup#Main'
         }],
-        FieldGroups #Main: {Data: [{
+        FieldGroup #Main: {Data: [{
             Value: name,
             Label: 'Nome'
         }]}
@@ -32,7 +32,7 @@ service wallets {
             Deletable
         }
     }) as
-        projection on schema.wallets {
+        projection on schema.Wallets {
             ID,
             name,
             createdAt

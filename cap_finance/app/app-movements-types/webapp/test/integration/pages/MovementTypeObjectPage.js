@@ -8,9 +8,9 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
 
     return new ObjectPage(
         {
-            appId: 'com.capfinance.movements.types.appmovementstypes',
-            componentId: 'MovementTypesObjectPage',
-            contextPath: '/MovementTypes'
+            appId: 'com.capfinance.movement.type.appmovementstypes',
+            componentId: 'MovementTypeObjectPage',
+            contextPath: '/MovementType'
         },
         CustomPageDefinitions
     );
