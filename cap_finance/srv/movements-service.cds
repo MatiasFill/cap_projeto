@@ -1,6 +1,4 @@
 using cap.schema from '../db/schema';
-
-
 service movements {
 
     entity MovementType as projection on schema.MovementType;
@@ -42,13 +40,11 @@ service movements {
             {Value: category_ID},
         ]}
     }
-
     entity Movements @(Capabilities: {
         InsertRestrictions: {
             $Type: 'Capabilities.InsertRestrictionsType',
             Insertable
         },
-
         UpdateRestrictions: {
             $Type: 'Capabilities.UpdateRestrictionsType',
             Updatable
@@ -57,7 +53,6 @@ service movements {
             $Type: 'Capabilities.DeleteRestrictionsType',
             Deletable
         },
-
     })                   as
         projection on schema.Movements {
             ID,
@@ -83,8 +78,7 @@ service movements {
             type,
             type.description                      as type_name,
             wallet,
-            wallet.name                           as wallet_name,
-
+            wallet.name                           as wallet_name,            
             @Common.ValueList      : {
                 Label         : 'Categoria',
                 CollectionPath: 'categories',
