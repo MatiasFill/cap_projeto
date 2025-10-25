@@ -2,12 +2,12 @@ using cap.schema from '../db/schema';
 
 service wallets {
     @UI: {
-        SelectionFields  : [name],
-        LineItem         : [{
+        SelectionFields : [name],
+        LineItem        : [{
             Value: name,
             Label: 'Nome'
         }],
-        Facets           : [{
+        Facets          : [{
             $Type : 'UI.ReferenceFacet',
             Label : 'Detalhes da Carteira',
             Target: '@UI.FieldGroup#Main'
@@ -31,12 +31,12 @@ service wallets {
             $Type: 'Capabilities.DeleteRestrictionsType',
             Deletable
         }
-    }) as
-        projection on schema.Wallets {
+    }) as projection on schema.Wallets
+          {
             ID,
             name,
             createdAt
-        };
+         };
 
     annotate Wallets with @odata.draft.enabled;
 }
