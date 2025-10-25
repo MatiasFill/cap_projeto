@@ -1,13 +1,14 @@
 using cap.schema from '../db/schema';
+
 service movements {
 
     entity MovementType as projection on schema.MovementType;
-    entity Wallets       as projection on schema.Wallets;
-    entity Capabilities  as projection on schema.Categories;
+    entity Wallets      as projection on schema.Wallets;
+    entity Capabilities as projection on schema.Categories;
 
     @UI: {
-        SelectionFields  : [title],
-        LineItem         : [
+        SelectionFields : [title],
+        LineItem        : [
             {Value: title},
             {
                 Value      : amount,
@@ -27,7 +28,7 @@ service movements {
                 Label: 'Categoria'
             }
         ],
-        Facets           : [{
+        Facets          : [{
             $Type : 'UI.ReferenceFacet',
             Label : 'Detalhes',
             Target: '@UI.FieldGroup#Main'
@@ -53,14 +54,14 @@ service movements {
             $Type: 'Capabilities.DeleteRestrictionsType',
             Deletable
         },
-    })                   as
+    })                  as
         projection on schema.Movements {
             ID,
             title,
             amount,
             @Common.ValueList      : {
                 Label         : 'Tipo de Movimento',
-                CollectionPath: 'movementType',
+                CollectionPath: 'MovementType',
                 Parameters    : [
                     {
                         $Type            : 'Common.ValueListParameterInOut',
@@ -68,7 +69,7 @@ service movements {
                         ValueListProperty: 'ID'
                     },
                     {
-                       $Type            : 'Common.ValueListParameterDisplayOnly',
+                        $Type            : 'Common.ValueListParameterDisplayOnly',
                         ValueListProperty: 'description'
                     }
                 ]
@@ -77,8 +78,25 @@ service movements {
             @Common.Text           : type_name
             type,
             type.description                      as type_name,
+            @Common.ValueList      : {
+                Label         : 'Carteira',
+                CollectionPath: 'wallets',
+                Parameters    : [
+                    {
+                        $Type            : 'Common.ValueListParameterInOut',
+                        LocalDataProperty: 'wallet_ID',
+                        ValueListProperty: 'ID'
+                    },
+                    {
+                        $Type            : 'Common.ValueListParameterDisplayOnly',
+                        ValueListProperty: 'name'
+                    }
+                ]
+            }
+            @Common.TextArrangement: #TextOnly
+            @Common.Text           : wallet_name
             wallet,
-            wallet.name                           as wallet_name,            
+            wallet.name                           as wallet_name,
             @Common.ValueList      : {
                 Label         : 'Categoria',
                 CollectionPath: 'categories',

@@ -3,12 +3,12 @@ using cap.schema from '../db/schema';
 
 service movementType {
     @UI: {
-        SelectionFields  : [description],
-        LineItem         : [{
+        SelectionFields : [description],
+        LineItem        : [{
             Value: description,
             Label: 'Descrição'
         }, ],
-        Facets           : [{
+        Facets          : [{
             $Type : 'UI.ReferenceFacet',
             Label : 'Detalhes da Cartegoria',
             Target: '@UI.FieldGroup#Main'
@@ -16,7 +16,7 @@ service movementType {
         FieldGroup #Main: {Data: [{
             Value: description,
             Label: 'Descrição'
-        }, ]}
+        }]}
 
     }
     entity MovementType @(Capabilities: {
