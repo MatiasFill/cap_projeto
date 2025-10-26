@@ -6,7 +6,7 @@ service wallets {
         LineItem        : [{
             Value: name,
             Label: 'Nome'
-        }],
+        },],
         Facets          : [{
             $Type : 'UI.ReferenceFacet',
             Label : 'Detalhes da Carteira',
@@ -31,12 +31,7 @@ service wallets {
             $Type: 'Capabilities.DeleteRestrictionsType',
             Deletable
         }
-    }) as projection on schema.Wallets
-          {
-            ID,
-            name,
-            createdAt
-         };
+    }) as projection on schema.Wallets;
 
     annotate Wallets with @odata.draft.enabled;
 }

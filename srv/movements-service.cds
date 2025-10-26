@@ -12,7 +12,7 @@ service movements {
             {Value: title},
             {
                 Value      : amount,
-                Criticality: {$value: criticality}
+                Criticality : criticality
 
             },
             {
@@ -38,7 +38,7 @@ service movements {
             {Value: amount},
             {Value: type_ID},
             {Value: wallet_ID},
-            {Value: category_ID},
+            {Value: category_ID}
         ]}
     }
     entity Movements @(Capabilities: {
@@ -120,7 +120,6 @@ service movements {
             @Common.Text           : category_name
             category,
             category.icon || ' ' || category.name as category_name : String(50),
-
             case
                 when type.description = 'RECEITA'
                      then 3
@@ -128,7 +127,6 @@ service movements {
                      then 1
                 else 2
             end                                   as criticality   : Integer,
-
         };
 
     annotate Movements with @odata.draft.enabled;
