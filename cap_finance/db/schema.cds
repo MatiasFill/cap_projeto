@@ -19,7 +19,7 @@ entity Categories : cuid, managed {
     @title: 'Nome'
     name  : String(50);
 
-    @title: 'Icone'
+    @title: 'Ícone'
     icon  : String(50);
 
     @title: 'Cor'
@@ -46,7 +46,7 @@ entity Movements : cuid, managed {
     @title: 'Categoria'
     category  : Association to Categories;
 
-    @title: 'Observação'
+    @title: 'Nota'
     note      : String(50);
     createdAt : DateTime;
 

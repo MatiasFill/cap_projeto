@@ -16,7 +16,7 @@ annotate service.Movements with {
             {
                 $Type : 'Common.ValueListParameterDisplayOnly',
                 ValueListProperty : 'name',
-            },
+            }
         ],
     }
 };

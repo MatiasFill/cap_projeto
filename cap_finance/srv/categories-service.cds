@@ -27,7 +27,7 @@ service categories {
             {
                 Value: icon,
                 Label: 'Icone'
-            },
+            }
         ]}
 
     }
