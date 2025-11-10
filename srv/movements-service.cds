@@ -4,7 +4,7 @@ service movements {
 
     entity MovementType as projection on schema.MovementType;
     entity Wallets      as projection on schema.Wallets;
-    entity Capabilities as projection on schema.Categories;
+    entity Categories   as projection on schema.Categories;
 
     @UI: {
         SelectionFields : [title],
@@ -12,7 +12,7 @@ service movements {
             {Value: title},
             {
                 Value      : amount,
-                Criticality : criticality
+                Criticality: criticality
 
             },
             {
@@ -99,7 +99,7 @@ service movements {
             wallet.name                           as wallet_name,
             @Common.ValueList      : {
                 Label         : 'Categoria',
-                CollectionPath: 'categories',
+                CollectionPath: 'Categories',
                 Parameters    : [
                     {
                         $Type            : 'Common.ValueListParameterInOut',

@@ -14,11 +14,12 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-app-catecories": "cds watch --open com.capfinance.category.appcatecories/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-app-wallets": "cds watch --open com.capfinance.wallets.appwallets/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-app-movements": "cds watch --open com.capfinance.movements.appmovements/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-app-movements-types": "cds watch --open com.capfinance.movement.type.appmovementstypes/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-app-catecories": "cds watch --open app-catecories/webapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-wallets": "cds watch --open app-wallets/webapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-movements": "cds watch --open app-movements/webapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-app-movements-types": "cds watch --open app-movements-types/webapp/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
+  
   "private": true,
   "workspaces": [
     "app/*"
